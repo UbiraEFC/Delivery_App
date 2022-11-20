@@ -1,10 +1,9 @@
 import express from "express";
+import { routes } from "./routes";
 
 export const app = express();
 
-app.get("/", (request, response) => {
-	return response.json({
-		message: "Hello Delivery APP",
-	});
-});
+app.use(express.json());
+
+app.use(routes);
 
